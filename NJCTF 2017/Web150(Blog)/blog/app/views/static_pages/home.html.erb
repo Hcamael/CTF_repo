@@ -1,0 +1,31 @@
+<% if signed_in? %>
+  <div class="row">
+  <aside class="span4">
+    <section>
+      <%= render 'shared/user_info' %>
+    </section>
+    <section>
+      <%= render 'shared/micropost_form' %>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+    </section>
+  </aside>
+   <div class="span8">
+        <h3>Micropost Feed</h3>
+        <%= render 'shared/feed' %>
+      </div>
+</div>
+<% else %>
+  <div class="center hero-unit">
+  <h1>Welcome to the Demo App</h1>
+
+  <h2>
+    这里是首页
+  </h2>
+
+  <%= link_to "Sign up now!", signup_path,
+    class: "btn btn-large btn-primary" %>
+</div>
+
+<% end %>

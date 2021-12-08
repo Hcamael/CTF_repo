@@ -1,0 +1,5 @@
+#!/bin/sh
+
+exec 2>/dev/null
+ulimit -H -c 0
+timeout -k1 30 stdbuf -i0 -o0 -e0 /service.py

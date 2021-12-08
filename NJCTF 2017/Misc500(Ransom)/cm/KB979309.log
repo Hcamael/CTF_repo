@@ -1,0 +1,149 @@
+[KB979309.log]
+8.234: ================================================================================
+8.234: 2017/02/20 22:51:03.706 (local)
+8.234: C:\WINDOWS\SoftwareDistribution\Download\f411e2065d979e27a0c02c556a5d00fa\update\update.exe (version 6.3.13.0)
+8.266: Failed To Enable SE_SHUTDOWN_PRIVILEGE
+8.688: Hotfix started with following command line: -q -z -er /ParentInfo:17e9092962b5f348aec12cbc3f0ac8d1 
+8.688: In Function GetReleaseSet, line 1240, RegQueryValueEx failed with error 0x2
+13.984: In Function TestVolatileFlag, line 11825, RegOpenKeyEx failed with error 0x2
+13.984: In Function TestVolatileFlag, line 11857, RegOpenKeyEx failed with error 0x2
+13.984: ---- Old Information In The Registry ------
+13.984: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\.key.zip 
+13.984: Destination: 
+13.984: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\flag1.txt.ccccccrypt 
+13.984: Destination: 
+14.031: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\flag2.txt.ccccccrypt 
+14.031: Destination: 
+14.031: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\flag3.txt.ccccccrypt 
+14.031: Destination: 
+14.031: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\READ_ME_BABY.html 
+14.031: Destination: 
+14.031: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\ 
+14.031: Destination: 
+14.031: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\2cf63e7e\private.jpg 
+14.031: Destination: 
+14.047: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\2cf63e7e\public.jpg 
+14.047: Destination: 
+14.047: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\2cf63e7e\ 
+14.047: Destination: 
+14.047: ---- New Information In The Registry ------
+14.047: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\.key.zip 
+14.047: Destination: 
+14.047: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\flag1.txt.ccccccrypt 
+14.047: Destination: 
+14.094: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\flag2.txt.ccccccrypt 
+14.094: Destination: 
+14.094: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\flag3.txt.ccccccrypt 
+14.094: Destination: 
+14.094: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\READ_ME_BABY.html 
+14.094: Destination: 
+14.094: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\ 
+14.094: Destination: 
+14.094: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\2cf63e7e\private.jpg 
+14.094: Destination: 
+14.109: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\2cf63e7e\public.jpg 
+14.109: Destination: 
+14.109: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\2cf63e7e\ 
+14.109: Destination: 
+14.109: In Function GetReleaseSet, line 1240, RegQueryValueEx failed with error 0x2
+14.109: SetProductTypes: InfProductBuildType=BuildType.Sel
+14.188: SetAltOsLoaderPath: No section uses DirId 65701; done.
+14.844: DoInstallation: FetchSourceURL for c:\windows\softwaredistribution\download\f411e2065d979e27a0c02c556a5d00fa\update\update_SP3GDR.inf failed
+14.875: CreateUninstall = 1,Directory = C:\WINDOWS\$NtUninstallKB979309$ 
+15.250: LoadFileQueues: UpdSpGetSourceFileLocation for halaacpi.dll failed: 0xe0000102
+16.406: BuildCabinetManifest: update.url absent
+16.438: Starting AnalyzeComponents
+16.438: AnalyzePhaseZero used 0 ticks
+16.438: No c:\windows\INF\updtblk.inf file.
+16.469: OEM file scan used 31 ticks
+16.750: AnalyzePhaseOne: used 312 ticks
+16.750: AnalyzeComponents: Hotpatch analysis disabled; skipping.
+16.750: AnalyzeComponents: Hotpatching is disabled.
+16.750: FindFirstFile c:\windows\$hf_mig$\*.*
+16.781: AnalyzeForBranching used 31 ticks.
+16.828: AnalyzePhaseTwo used 0 ticks
+16.828: AnalyzePhaseThree used 0 ticks
+16.844: AnalyzePhaseFive used 0 ticks
+16.844: AnalyzePhaseSix used 0 ticks
+16.844: AnalyzeComponents used 406 ticks
+16.844: Downloading 0 files
+16.844: bPatchMode = FALSE
+16.859: Inventory complete: ReturnStatus=0, 1953 ticks
+16.891: Num Ticks for invent : 2016
+16.953: GetFileSecurity failed with error 0x2 for file c:\windows\inf\branches.inf
+16.953: GetFileSecurity failed with error 0x2 for file c:\windows\inf\branches.inf
+16.953: VerifyTargetFileSize: Unable to verify size as Source = NULL for file c:\windows\inf\HFX5.tmp
+16.984: 复制的文件:  c:\windows\inf\branches.inf
+17.016: Allocation size of drive C: is 4096 bytes, free space = 3273252864 bytes
+17.234: AnalyzeDiskUsage:  Skipping EstimateDiskUsageForUninstall.
+17.234: Drive C: free 3121MB req: 10MB w/uninstall: NOT CALCULATED.
+17.234: CabinetBuild complete
+17.234: Num Ticks for Cabinet build : 343
+17.266: DynamicStrings section not defined or empty.
+17.453: FileInUse:: Detection disabled.
+18.516: LoadFileQueues: UpdSpGetSourceFileLocation for halaacpi.dll failed: 0xe0000102
+20.172: Num Ticks for Backup : 2938
+21.313: Num Ticks for creating uninst inf : 1141
+21.406: Registering Uninstall Program for -> KB979309, KB979309 , 0x0
+21.469: LoadFileQueues: UpdSpGetSourceFileLocation for halaacpi.dll failed: 0xe0000102
+22.906: System Restore Point set.
+22.922: 复制的文件:  C:\WINDOWS\system32\spmsg.dll
+24.094: PFE2: Not avoiding Per File Exceptions.
+24.250: GetCatVersion:  Failed to retrieve version information from C:\WINDOWS\system32\CatRoot\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}\KB979309.cat with error 0x57
+24.859: ProcessSetupContentSection: PROCESS_SETUP_CONTENT_OP_INSTALL: Copied c:\windows\softwaredistribution\download\f411e2065d979e27a0c02c556a5d00fa\update\update_SP3QFE.inf -> c:\windows\$hf_mig$\KB979309\update\update_SP3QFE.inf.
+24.922: ProcessSetupContentSection: PROCESS_SETUP_CONTENT_OP_INSTALL: Copied c:\windows\softwaredistribution\download\f411e2065d979e27a0c02c556a5d00fa\spuninst.exe -> c:\windows\$hf_mig$\KB979309\spuninst.exe.
+24.953: ProcessSetupContentSection: PROCESS_SETUP_CONTENT_OP_INSTALL: Copied c:\windows\softwaredistribution\download\f411e2065d979e27a0c02c556a5d00fa\spmsg.dll -> c:\windows\$hf_mig$\KB979309\spmsg.dll.
+25.016: ProcessSetupContentSection: PROCESS_SETUP_CONTENT_OP_INSTALL: Copied c:\windows\softwaredistribution\download\f411e2065d979e27a0c02c556a5d00fa\update\spcustom.dll -> c:\windows\$hf_mig$\KB979309\update\spcustom.dll.
+25.047: ProcessSetupContentSection: PROCESS_SETUP_CONTENT_OP_INSTALL: Copied c:\windows\softwaredistribution\download\f411e2065d979e27a0c02c556a5d00fa\update\KB979309.CAT -> c:\windows\$hf_mig$\KB979309\update\KB979309.CAT.
+25.281: ProcessSetupContentSection: PROCESS_SETUP_CONTENT_OP_INSTALL: Copied c:\windows\softwaredistribution\download\f411e2065d979e27a0c02c556a5d00fa\update\update.exe -> c:\windows\$hf_mig$\KB979309\update\update.exe.
+25.328: ProcessSetupContentSection: PROCESS_SETUP_CONTENT_OP_INSTALL: Copied c:\windows\softwaredistribution\download\f411e2065d979e27a0c02c556a5d00fa\update\updspapi.dll -> c:\windows\$hf_mig$\KB979309\update\updspapi.dll.
+25.391: ProcessSetupContentSection: PROCESS_SETUP_CONTENT_OP_INSTALL: Copied c:\windows\softwaredistribution\download\f411e2065d979e27a0c02c556a5d00fa\update\update.ver -> c:\windows\$hf_mig$\KB979309\update\update.ver.
+25.422: ProcessSetupContentSection: PROCESS_SETUP_CONTENT_OP_INSTALL: Copied c:\windows\softwaredistribution\download\f411e2065d979e27a0c02c556a5d00fa\update\updatebr.inf -> c:\windows\$hf_mig$\KB979309\update\updatebr.inf.
+25.516: ProcessSetupContentSection: PROCESS_SETUP_CONTENT_OP_INSTALL: Copied c:\windows\softwaredistribution\download\f411e2065d979e27a0c02c556a5d00fa\update\eula.txt -> c:\windows\$hf_mig$\KB979309\update\eula.txt.
+25.609: ProcessSetupContentSection: PROCESS_SETUP_CONTENT_OP_INSTALL: Copied c:\windows\softwaredistribution\download\f411e2065d979e27a0c02c556a5d00fa\update\branches.inf -> c:\windows\$hf_mig$\KB979309\update\branches.inf.
+25.719: 复制的文件:  C:\WINDOWS\system32\cabview.dll
+26.141: 复制的文件:  C:\WINDOWS\system32\DllCache\cabview.dll
+26.563: 复制的文件:  c:\windows\$hf_mig$\KB979309\SP3QFE\cabview.dll
+26.875: DoInstallation: Installing assemblies with source root path: c:\windows\softwaredistribution\download\f411e2065d979e27a0c02c556a5d00fa\
+26.875: Num Ticks for Copying files : 5562
+28.188: Num Ticks for Reg update and deleting 0 size files : 1313	
+28.313: ---- Old Information In The Registry ------
+28.313: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\.key.zip 
+28.313: Destination: 
+28.313: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\flag1.txt.ccccccrypt 
+28.313: Destination: 
+28.359: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\flag2.txt.ccccccrypt 
+28.359: Destination: 
+28.359: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\flag3.txt.ccccccrypt 
+28.359: Destination: 
+28.359: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\READ_ME_BABY.html 
+28.359: Destination: 
+28.359: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\ 
+28.359: Destination: 
+28.359: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\2cf63e7e\private.jpg 
+28.359: Destination: 
+28.375: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\2cf63e7e\public.jpg 
+28.375: Destination: 
+28.375: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\2cf63e7e\ 
+28.375: Destination: 
+28.375: ---- New Information In The Registry ------
+28.375: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\.key.zip 
+28.375: Destination: 
+28.375: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\flag1.txt.ccccccrypt 
+28.375: Destination: 
+28.422: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\flag2.txt.ccccccrypt 
+28.422: Destination: 
+28.422: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\flag3.txt.ccccccrypt 
+28.422: Destination: 
+28.422: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\READ_ME_BABY.html 
+28.422: Destination: 
+28.422: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\3c770f9c\ 
+28.422: Destination: 
+28.422: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\2cf63e7e\private.jpg 
+28.422: Destination: 
+28.438: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\2cf63e7e\public.jpg 
+28.438: Destination: 
+28.438: Source:C:\DOCUME~1\ctf\LOCALS~1\Temp\vmware-ctf\VMwareDnD\2cf63e7e\ 
+28.438: Destination: 
+203.516: UpdateSpUpdSvcInf: Source [ProcessesToRunAfterReboot] section is empty; nothing to do.
+203.547: RebootNecessary = 0,WizardInput = 1 , DontReboot = 1, ForceRestart = 0

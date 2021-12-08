@@ -1,0 +1,160 @@
+#!/usr/bin/env ruby
+
+# {{{ === requires ===
+require 'digest'
+require 'json'
+require 'openssl'
+require 'securerandom'
+require 'timeout'
+# }}}
+
+Timeout.timeout(30) do
+# {{{ === magics ===
+  $stdout.sync = true
+  # For xinetd
+  Dir.chdir(File.dirname(__FILE__))
+
+  # Make local variables in main global! sooooo cooool :D
+  # Pro Tip: NEVER do this in any serious coding :P
+  M = binding
+  def self.method_missing(name, *args)
+    if name.to_s.end_with?('=')
+      M.local_variable_set(name[0...-1], *args) rescue super
+    else
+      M.local_variable_get(name, *args) rescue super
+    end
+  end
+
+  s = 1
+  SECURITY_LEVEL = 100
+  # Destroy sensitive numbers from memory, so that things are safe even if there's bug in Ruby interpreter and we're pwned.
+  def destroy(xs)
+    xs.each do |x|
+      # We use send to invoke the magic above.
+      v = send(x)
+      v ^= str_to_num(SecureRandom.random_bytes(s * SECURITY_LEVEL))
+      send("#{x}=", v)
+    end
+  end
+# }}}
+
+# {{{ === utility functions ===
+  # str_to_num('AB') = 0x4142 = 16706
+  def str_to_num(s)
+    s.unpack('H*')[0].to_i(16)
+  end
+
+  # x^y (mod z)
+  def pow(x, y, z)
+    x.to_bn.mod_exp(y, z).to_i
+  end
+
+  # x^(-1) (mod y)
+  def inv(x, y)
+    x.to_bn.mod_inverse(y).to_i
+  end
+# }}}
+
+# {{{ === RSA encryption & sign ===
+  # e: public exponent
+  # d: private exponent
+  # n = pp*qq, n public, pp, qq private
+  # x: message to sign / encrypt
+  # e*d = 1 (mod phi(n)), which phi(n) = (pp-1)*(qq-1) can't be calculated easily.
+
+  # encrypt: enc = x^e (mod n)
+  def encrypt(x)
+    pow(x, e, n)
+  end
+
+  # sign / decrypt: sign = x^d (mod n)
+  def sign(x)
+    # We use CRT to have faster computation of signature.
+    #   x^d (mod n)
+    # = ((x^d (mod pp)) * qq * (qq^(-1) (mod pp)) + (x^d (mod qq)) * pp * (pp^(-1) (mod qq))) (mod n)
+    mp = pow(x, d, pp)
+    mq = pow(x, d, qq)
+    rp = inv(pp, qq)
+    rq = inv(qq, pp)
+    (mp * qq * rq + mq * pp * rp) % n
+  end
+# }}}
+
+# {{{ === proof of work ===
+  # XXX: We only call this function once, no need to wrap it in a function.
+  # def proof_of_work
+    x = SecureRandom.random_bytes(6)
+    puts 'Robot test'
+    puts "prefix: #{[x].pack('m0')}"
+    r = gets.strip.unpack('m0')[0]
+    r = Digest::SHA1.digest(x + r)
+    # We want the digest to begin with 23 bits of zero.
+    # [0..15]
+    unless r.start_with?("\0\0")
+      puts 'FAIL! GO AWAY!'
+      exit
+    end
+    c = r[2].ord
+    r, s = c / 2, c % 2
+    # r: [16..22], s: [23]
+    unless r == 0
+      puts 'FAIL! GO AWAY!'
+      exit
+    end
+    print 'Good job! '
+  # end
+  # proof_of_work
+# }}}
+
+# === Main starts here ===
+
+  e = 0x10001
+  # Secrets!
+  pp, qq = JSON.load(IO.read('secret'))
+
+  # Sanity check, check things are really RSA private keys.
+  fail if pp == qq
+  fail unless pp.to_bn.prime? && qq.to_bn.prime?
+  fail unless pp.to_s(2).size == 1025 && qq.to_s(2).size == 1025
+
+  # RSA variables
+  n = pp * qq
+  phi = (pp - 1) * (qq - 1)
+  d = inv(e, phi)
+
+  # More secrets!
+  flag = IO.read('flag.txt').strip
+  fail unless flag =~ /\Ahitcon\{[a-zA-Z0-9_]+\}\z/
+  flag = str_to_num(flag)
+  fail unless (2...n).include?(flag)
+
+  # This is the encrypted flag, should be safe to give to anyone since n is sooooo large.
+  encflag = encrypt(flag)
+  puts [encflag.to_bn.to_s(2)].pack('m0')
+  puts
+
+  # Print banner and n
+  puts 'Welcome to a simple RSA signing server!'
+  puts "n = 0x#{n.to_s(16)}"
+
+  # Ok we don't need these numbers anymore, destroy them before reading user input,
+  # so they can't be read from memory if we're pwned :(
+  # XXX: pp and qq are still in memory, but since they're needed in signing, I guess this is the best we can do.
+  destroy %i(flag phi encflag e n)
+
+  # Now we give user a chance to do some signing.
+  # We only allow small numbers or this service can be abused to decrypt arbitrary things :(
+  x = gets.to_i
+  unless (1...514514).include?(x)
+    puts 'Input out of range!'
+    exit
+  end
+  v = sign(x)
+  puts v
+
+  # YAY!
+  puts 'All done. Bye~'
+  exit
+end
+
+# vim: fdm=marker:commentstring=\ \"\ %s:nowrap:autoread

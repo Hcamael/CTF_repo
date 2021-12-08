@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?> 
+<config>
+<app>
+<debug>1</debug>
+<webid>136</webid>
+<webheart>0</webheart>
+<zxin_version>3500</zxin_version>
+<logpath>/home/zxin10/log</logpath>
+<logtype>1</logtype>
+<uppath>/home/zxin10/service</uppath>
+<tmppath>/tmp</tmppath>
+<downpath>/download</downpath>
+<dbusertype>1</dbusertype>
+<cardmapscpip></cardmapscpip>
+<cardmapscppwd></cardmapscppwd>
+<authclassic>0</authclassic>
+</app>
+
+</config>
